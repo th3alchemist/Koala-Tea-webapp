@@ -1,0 +1,81 @@
+@charset "ISO-8859-1";
+/* stylelint-disable selector-no-qualifying-type, property-no-vendor-prefix */
+
+html {
+  position: relative;
+  height: 100%;
+}
+body {
+  padding-top: 40px;
+  padding-bottom: 170px;
+  background-color: #eee;
+  /* background-size:cover; */
+  height: 100%;
+}
+#formbox {
+  display: block;
+  /* text-align: center; */
+  margin-top: 5%;
+  
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  /* background-color: rgba(105, 105, 105, 0.356); */
+  background: rgba(209, 200, 200, 0.671);
+  border-radius: 10px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+  color: white;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px; /* Set the fixed height of the footer here */
+
+  background: transparent;
+}
+.footer p {
+  color: white;
+}
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container p{
+  margin: 10px;
+
+  /* margin-left: 0px;
+  margin-right: 0px; */
+}

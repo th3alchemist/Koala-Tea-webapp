@@ -1,0 +1,26 @@
+
+h4 {
+    text-align: center;
+    font-weight: 600;
+}
+label {
+    font-weight: 500;
+}
+#container {
+    padding-top:10px;
+    margin-top: 30px;
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formbox {
+    display: block;
+    /* text-align: center; */
+    padding: 5%;
+    margin-top: 50%;
+    margin: 0 auto;
+    /* background-color: rgba(105, 105, 105, 0.356); */
+    background: rgba(16, 122, 185, 0.2);
+    border-radius: 10px;
+}
