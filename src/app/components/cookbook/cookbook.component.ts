@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { Cookbook } from 'src/app/classes/cookbook';
-import { CookbookService } from 'src/app/services/cookbook.service'
+import { CookbookService } from 'src/app/service/cookbook.service'
 
 @Component({
   selector: 'app-cookbook',
@@ -12,7 +12,9 @@ import { CookbookService } from 'src/app/services/cookbook.service'
 })
 export class CookbookComponent implements OnInit {
   
-  constructor(private ts:TrfService) { }
+  constructor(private cs:CookbookService) { }
+
+  data:any
 
   ngOnInit() {
   }
@@ -22,11 +24,11 @@ export class CookbookComponent implements OnInit {
     //let description = <HTMLInputElement>document.getElementsByName("description")[0].value
     //let recipe = <HTMLInputElement>document.getElementsByName("recipe")[0].value
 
-    var u = new User(-1, "email", "pwd", "fname", "lname", "address", "dob")
+    var u = new User(-1, "email", "pwd", "fname", "lname", "address", new Date())
     var cb = new Cookbook(-1, "title", "description", true, u)
     
     console.log(JSON.stringify(cb))
-    ts.save(cb).subscribe(
+    this.cs.save(cb).subscribe(
       data => {
         this.data = data;
         console.log(this.data);

@@ -6,16 +6,16 @@ export class User{
   public fname:string
   public lname:string
   public address:string
-  public dateOfBirth:string
+  public dateOfBirth:Date
 
-    constructor(id:number, email:string, password:string, fname:string, lname:string, address:string, dateOfBirth:string){
+    constructor(id:number, email:string, password:string, fname:string, lname:string, address:string, dateOfBirth:Date){
       this.id = id
       this.email = email
       this.password = password
       this.fname = fname
       this.lname = lname
       this.address = address
-      this.dateOfBirth = dateOfBirth
+      this.dateOfBirth = new Date()
     }
 
     public getId(id:number){return this.id;}

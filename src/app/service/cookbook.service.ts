@@ -11,13 +11,13 @@ export class CookbookService {
 
   constructor(private http:HttpClient) {
 
+  }
 
-    save(cb:Cookbook){
-      let headers = new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded");
+  save(cb:Cookbook){
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
 
-      let body = cb;
+    let body = cb;
 
-      return http.post("http://localhost:8090/cookbook/save", body, {headers: headers});
-    }
+    return this.http.post("http://localhost:8090/cookbook/save", body, {headers: headers});
   }
 }
