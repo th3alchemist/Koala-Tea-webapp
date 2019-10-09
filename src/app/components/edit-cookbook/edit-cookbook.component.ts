@@ -36,7 +36,7 @@ export class EditCookbookComponent implements OnInit {
     let title = (<HTMLInputElement>document.getElementById("title")).value
     let description = (<HTMLInputElement>document.getElementById("description")).value
 
-    var u = new User(1, "email", "pwd", "fname", "lname", "address", new Date())
+    var u = new User(1, "email", "pwd", "fname", "lname", "address", "1992-12-17")
     var cb = new Cookbook(parseInt(id), title, description, true, u)
 
     this.cs.save(cb).subscribe(
