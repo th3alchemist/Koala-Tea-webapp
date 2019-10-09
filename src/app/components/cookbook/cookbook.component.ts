@@ -26,7 +26,7 @@ export class CookbookComponent implements OnInit {
 
     console.log(title)
 
-    var u = new User(1, "email", "pwd", "fname", "lname", "address", new Date())
+    var u = new User(1, "email", "pwd", "fname", "lname", "address", "1996-12-17")
     var cb = new Cookbook(-1, title.value, description.value, true, u)
     
     console.log(JSON.stringify(cb))
