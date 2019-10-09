@@ -1,12 +1,12 @@
 export class User{
 
-  public id:number
-  public email:string
-  public password:string
-  public fname:string
-  public lname:string
-  public address:string
-  public dateOfBirth:Date
+    private id:number;
+    private email:string;
+    private password:string;
+    private fname:string;
+    private lname:string;
+    private address:string;
+    private dateOfBirth:Date;
 
     constructor(id:number, email:string, password:string, fname:string, lname:string, address:string, dateOfBirth:Date){
       this.id = id
@@ -17,48 +17,109 @@ export class User{
       this.address = address
       this.dateOfBirth = new Date()
     }
-
-    public getId(id:number){return this.id;}
-}
-
+    
     /**
-     * Getter $email
+     * Getter email
      * @return {string}
      */
-	public get $email(): string {
+	public getEmail(): string {
 		return this.email;
 	}
 
     /**
-     * Getter $password
+     * Getter password
      * @return {string}
      */
-	public get $password(): string {
+	public getPassword(): string {
 		return this.password;
 	}
 
     /**
-     * Getter $fname
+     * Getter fname
      * @return {string}
      */
-	public get $fname(): string {
+	public getFname(): string {
 		return this.fname;
 	}
 
     /**
-     * Getter $lname
+     * Getter lname
      * @return {string}
      */
-	public get $lname(): string {
+	public getLname(): string {
 		return this.lname;
 	}
 
     /**
-     * Getter $address
+     * Getter address
      * @return {string}
      */
-	public get $address(): string {
+	public getAddress(): string {
 		return this.address;
+	}
+
+    /**
+     * Getter dateOfBirth
+     * @return {string}
+     */
+	public getDateOfBirth(): Date {
+		return this.dateOfBirth;
+	}
+
+    /**
+     * Setter id
+     * @param {number} value
+     */
+	public setId(value: number) {
+		this.id = value;
+	}
+
+    /**
+     * Setter email
+     * @param {string} value
+     */
+	public setEmail(value: string) {
+		this.email = value;
+	}
+
+    /**
+     * Setter password
+     * @param {string} value
+     */
+	public setPassword(value: string) {
+		this.password = value;
+	}
+
+    /**
+     * Setter fname
+     * @param {string} value
+     */
+	public setFname(value: string) {
+		this.fname = value;
+	}
+
+    /**
+     * Setter lname
+     * @param {string} value
+     */
+	public setLname(value: string) {
+		this.lname = value;
+	}
+
+    /**
+     * Setter address
+     * @param {string} value
+     */
+	public setAddress(value: string) {
+		this.address = value;
+	}
+
+    /**
+     * Setter dateOfBirth
+     * @param {string} value
+     */
+	public setDateOfBirth(value: Date) {
+		this.dateOfBirth = value;
 	}
 
 }
