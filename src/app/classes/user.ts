@@ -20,3 +20,45 @@ export class User{
 
     public getId(id:number){return this.id;}
 }
+
+    /**
+     * Getter $email
+     * @return {string}
+     */
+	public get $email(): string {
+		return this.email;
+	}
+
+    /**
+     * Getter $password
+     * @return {string}
+     */
+	public get $password(): string {
+		return this.password;
+	}
+
+    /**
+     * Getter $fname
+     * @return {string}
+     */
+	public get $fname(): string {
+		return this.fname;
+	}
+
+    /**
+     * Getter $lname
+     * @return {string}
+     */
+	public get $lname(): string {
+		return this.lname;
+	}
+
+    /**
+     * Getter $address
+     * @return {string}
+     */
+	public get $address(): string {
+		return this.address;
+	}
+
+}
