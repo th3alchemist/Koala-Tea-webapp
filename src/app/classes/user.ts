@@ -15,7 +15,7 @@ export class User{
       this.fname = fname
       this.lname = lname
       this.address = address
-      this.dateOfBirth = new Date()
+      this.dateOfBirth = dateOfBirth
     }
     
     /**
