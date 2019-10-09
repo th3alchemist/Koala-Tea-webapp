@@ -20,14 +20,14 @@ export class CookbookComponent implements OnInit {
   }
 
   onSubmit(){
-    let title = <HTMLInputElement>document.getElementById("title").value
-    let description = <HTMLInputElement>document.getElementsByName("description").value
-    let recipe = <HTMLInputElement>document.getElementsByName("recipe").value
+    let title = <HTMLInputElement>document.getElementById("title")
+    let description = <HTMLInputElement>document.getElementById("description")
+    let recipe = <HTMLInputElement>document.getElementById("recipe")
 
     console.log(title)
 
-    var u = new User(-1, "email", "pwd", "fname", "lname", "address", new Date())
-    var cb = new Cookbook(-1, title, description, true, u)
+    var u = new User(1, "email", "pwd", "fname", "lname", "address", new Date())
+    var cb = new Cookbook(-1, title.value, description.value, true, u)
     
     console.log(JSON.stringify(cb))
     this.cs.save(cb).subscribe(

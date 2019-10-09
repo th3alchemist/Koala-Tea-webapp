@@ -20,4 +20,11 @@ export class CookbookService {
 
     return this.http.post("http://localhost:8090/cookbook/save", body, {headers: headers});
   }
+
+  getById(id:number){
+    let headers = new HttpHeaders().set("Content-Type", "application/json")
+    let url = "http://localhost:8090/cookbook/" + id
+
+    return this.http.get(url, {headers: headers})
+  }
 }

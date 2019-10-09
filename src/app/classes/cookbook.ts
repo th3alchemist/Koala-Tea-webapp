@@ -16,5 +16,7 @@ export class Cookbook{
       this.user = user;
   }
 
-  public getId(id:number){return this.id;}
+  public getId(){return this.id;}
+  public getTitle(){return this.title;}
+  public getDescription(){return this.description;}
 }

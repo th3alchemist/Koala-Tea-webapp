@@ -1,3 +1,32 @@
 <p>dashboard works!</p>
-
 <a routerLink="/ingrediendet"> click</a>
+<br>
+<button (click)="getCookbookById()">Cookbook</button>
+
+
+<form class="form">
+  <h1>Create Cookbook</h1>
+  <div class="form-element">
+    <input type="text" id="id" class="form-control" placeholder="id" required autofocus>
+  </div>
+  <div class="form-element">
+    <input type="text" id="title" class="form-control" placeholder="Title" required>
+  </div>
+  <div class="form-element">
+    <textarea id="description" class="form-control" placeholder="Description" required></textarea>
+  </div>
+  <hr>
+  <div class="form-element">
+    <input type="text" id="recipe" class="form-control" placeholder="Recipe Name" required>
+    <button class="btn-submit">Add</button>
+  </div>
+  <div class="form-element">
+    <label>
+      <input type="checkbox" class="checkbox" value="share">
+      <label for="description">Share</label>
+    </label>
+  </div>
+</form>
+
+<button (click)="saveCookbook()">Save</button>
+
