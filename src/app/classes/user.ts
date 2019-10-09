@@ -6,9 +6,9 @@ export class User{
     private fname:string;
     private lname:string;
     private address:string;
-    private dateOfBirth:Date;
+    private dateOfBirth:string;
 
-    constructor(id:number, email:string, password:string, fname:string, lname:string, address:string, dateOfBirth:Date){
+    constructor(id:number, email:string, password:string, fname:string, lname:string, address:string, dateOfBirth:string){
       this.id = id
       this.email = email
       this.password = password
@@ -62,7 +62,7 @@ export class User{
      * Getter dateOfBirth
      * @return {string}
      */
-	public getDateOfBirth(): Date {
+	public getDateOfBirth(): string {
 		return this.dateOfBirth;
 	}
 
@@ -118,7 +118,7 @@ export class User{
      * Setter dateOfBirth
      * @param {string} value
      */
-	public setDateOfBirth(value: Date) {
+	public setDateOfBirth(value: string) {
 		this.dateOfBirth = value;
 	}
 
