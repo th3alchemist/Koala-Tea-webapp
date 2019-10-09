@@ -7,6 +7,7 @@ import { CreateRecipeComponent } from './components/create-recipe/create-recipe.
 import { CreateUserAccountComponent } from './components/create-user-account/create-user-account.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
+import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: "ingredient",
     component: ViewIngredientComponent
+  },
+  {
+    path: "editCookbook",
+    component: EditCookbookComponent
   }
 ];
 
