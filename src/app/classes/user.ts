@@ -1,30 +1,25 @@
-export class User {
-    private id:number;
-    private email:string;
-    private password:string;
-    private fname:string;
-    private lname:string;
-    private address:string;
-    private dateOfBirth:string;
+export class User{
 
-	constructor($id: number, $email: string, $password: string, $fname: string, $lname: string, $address: string, $dateOfBirth: string) {
-		this.id = $id;
-		this.email = $email;
-		this.password = $password;
-		this.fname = $fname;
-		this.lname = $lname;
-		this.address = $address;
-		this.dateOfBirth = $dateOfBirth;
-	}
-    
+  public id:number
+  public email:string
+  public password:string
+  public fname:string
+  public lname:string
+  public address:string
+  public dateOfBirth:Date
 
-    /**
-     * Getter $id
-     * @return {number}
-     */
-	public get $id(): number {
-		return this.id;
-	}
+    constructor(id:number, email:string, password:string, fname:string, lname:string, address:string, dateOfBirth:Date){
+      this.id = id
+      this.email = email
+      this.password = password
+      this.fname = fname
+      this.lname = lname
+      this.address = address
+      this.dateOfBirth = new Date()
+    }
+
+    public getId(id:number){return this.id;}
+}
 
     /**
      * Getter $email
@@ -66,67 +61,4 @@ export class User {
 		return this.address;
 	}
 
-    /**
-     * Getter $dateOfBirth
-     * @return {string}
-     */
-	public get $dateOfBirth(): string {
-		return this.dateOfBirth;
-	}
-
-    /**
-     * Setter $id
-     * @param {number} value
-     */
-	public set $id(value: number) {
-		this.id = value;
-	}
-
-    /**
-     * Setter $email
-     * @param {string} value
-     */
-	public set $email(value: string) {
-		this.email = value;
-	}
-
-    /**
-     * Setter $password
-     * @param {string} value
-     */
-	public set $password(value: string) {
-		this.password = value;
-	}
-
-    /**
-     * Setter $fname
-     * @param {string} value
-     */
-	public set $fname(value: string) {
-		this.fname = value;
-	}
-
-    /**
-     * Setter $lname
-     * @param {string} value
-     */
-	public set $lname(value: string) {
-		this.lname = value;
-	}
-
-    /**
-     * Setter $address
-     * @param {string} value
-     */
-	public set $address(value: string) {
-		this.address = value;
-	}
-
-    /**
-     * Setter $dateOfBirth
-     * @param {string} value
-     */
-	public set $dateOfBirth(value: string) {
-		this.dateOfBirth = value;
-	}
 }

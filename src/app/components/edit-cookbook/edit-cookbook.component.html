@@ -1,0 +1,23 @@
+<div class="container-fluid body-bg">
+  <form class="form">
+    <h1>Edit Cookbook</h1>
+    <div class="form-element">
+      <input type="text" id="id" class="form-control" placeholder="id" required autofocus>
+    </div>
+    <div class="form-element">
+      <input type="text" id="title" class="form-control" placeholder="Title" required>
+    </div>
+    <div class="form-element">
+      <textarea id="description" class="form-control" placeholder="Description" required></textarea>
+    </div>
+    <div class="form-element">
+      <label>
+        <input type="checkbox" class="checkbox" value="share">
+        <label for="description">Share</label>
+      </label>
+    </div>
+    <button class="kt-btn" (click)="getCookbookById()">Read</button>
+    <br>
+    <button class="kt-btn" (click)="saveCookbook()">Save</button>
+  </form>
+</div>
