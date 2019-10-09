@@ -1,28 +1,28 @@
 <div id="formbox" class="container">
 
-    <form action="" method="" class="form-create-user">
+    <form #createAccountForm="ngForm" (ngSubmit)="createAccount()" class="form-create-user">
         <h2 class="form-create-user-heading">Create A New User Account:</h2>
         
-        <!-- Form Row 1-->
+        <!-- Form Row 1 First and Last Name-->
         <div class="form-row">
             <div class="col ">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" class="form-control" placeholder="First Name" name="firstName" required autofocus>
+                <input [(ngModel)] = "firstName" type="text" id="firstName" class="form-control" placeholder="First Name" name="firstName" required autofocus>
             </div>
             <div class="col">
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" class="form-control" placeholder="Last Name" name="lastName" required>
+                <input [(ngModel)] = "lastName" type="text" id="lastName" class="form-control" placeholder="Last Name" name="lastName" required>
             </div>
         </div>
         <!-- Form Row 2 DOB and Address fields-->
         <div class="form-row">
             <div class="col">
                 <label for="dob">Date of Birth:</label> 
-                <input type="date" id="dob" class="form-control" name="dob" required>
+                <input [(ngModel)] = "dateOfBirth" type="date" id="dob" class="form-control" name="dob" required>
             </div>
             <div class="col">
                 <label for="address">Address:</label>
-                <input type="text" id="address" class="form-control" placeholder="Address" name="address" required>
+                <input [(ngModel)] = "address" type="text" id="address" class="form-control" placeholder="Address" name="address" required>
             </div>
         </div>
 
@@ -30,21 +30,21 @@
         <div class="form-row">
             <div class="col">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email (username)" required>
+                <input [(ngModel)] = "email" type="email" name="email" id="email" class="form-control" placeholder="Email (username)" required>
             </div>
         </div>
-        <!-- Form Row 4 Confirm Password-->
+        <!-- Form Row 4 Password-->
         <div class="form-row">
             <div class="col">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                <input [(ngModel)] = "password" type="password" name="password" id="password" class="form-control" placeholder="Password" required>
             </div>
         </div>
-        <!-- Form Row 5-->
+        <!-- Form Row 5 Confirm Password-->
         <div class="form-row">
             <div class="col">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                <input [(ngModel)] = "confirmPassword" type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
             </div>
         </div>
         <!-- Form Row 6 Button-->
