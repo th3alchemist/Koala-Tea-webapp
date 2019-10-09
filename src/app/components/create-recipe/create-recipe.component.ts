@@ -44,11 +44,14 @@ export class CreateRecipeComponent implements OnInit {
   // cooklist : Array<Cookbook> = [];
   cookbook:Number[] = [1,2];
   // //CHECKBOX FOR PUBLIC
-  // isChecked:boolean = false;
+  
+  isChecked:boolean = false;
 
-  // check(){
-  //   this.isChecked = !this.isChecked;
-  // }
+  check(){
+    console.log("current: " + this.isChecked)
+    this.isChecked = !this.isChecked;
+    console.log("now: " + this.isChecked)
+  }
 
 counter:number = 1;
 
@@ -128,7 +131,7 @@ counter:number = 1;
       this.listOfIngredientAmount.push(Number((<HTMLInputElement>ingredients.getElementsByClassName("amount")[i]).value));
       this.listOfIngredientUnit.push(Number((<HTMLInputElement>ingredients.getElementsByClassName("unit")[i]).value))
     }
-   
+   console.log("checkbox " + shared)
     //THIS SUBMITS RECIPE OBJECT ONLY
     this.rs.submitRecipe(cookbookid, title, shared, instruction).subscribe(
       data => {
