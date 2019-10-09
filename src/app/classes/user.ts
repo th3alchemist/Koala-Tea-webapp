@@ -8,126 +8,126 @@ export class User {
     private address:string;
     private dateOfBirth:string;
 
-	constructor($id: number, $email: string, $password: string, $fname: string, $lname: string, $address: string, $dateOfBirth: string) {
-		this.id = $id;
-		this.email = $email;
-		this.password = $password;
-		this.fname = $fname;
-		this.lname = $lname;
-		this.address = $address;
-		this.dateOfBirth = $dateOfBirth;
+	constructor(id?: number, email?: string, password?: string, fname?: string, lname?: string, address?: string, dateOfBirth?: string) {
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.fname = fname;
+		this.lname = lname;
+		this.address = address;
+		this.dateOfBirth = dateOfBirth;
 	}
     
 
     /**
-     * Getter $id
+     * Getter id
      * @return {number}
      */
-	public get $id(): number {
+	public getId(): number {
 		return this.id;
 	}
 
     /**
-     * Getter $email
+     * Getter email
      * @return {string}
      */
-	public get $email(): string {
+	public getEmail(): string {
 		return this.email;
 	}
 
     /**
-     * Getter $password
+     * Getter password
      * @return {string}
      */
-	public get $password(): string {
+	public getPassword(): string {
 		return this.password;
 	}
 
     /**
-     * Getter $fname
+     * Getter fname
      * @return {string}
      */
-	public get $fname(): string {
+	public getFname(): string {
 		return this.fname;
 	}
 
     /**
-     * Getter $lname
+     * Getter lname
      * @return {string}
      */
-	public get $lname(): string {
+	public getLname(): string {
 		return this.lname;
 	}
 
     /**
-     * Getter $address
+     * Getter address
      * @return {string}
      */
-	public get $address(): string {
+	public getAddress(): string {
 		return this.address;
 	}
 
     /**
-     * Getter $dateOfBirth
+     * Getter dateOfBirth
      * @return {string}
      */
-	public get $dateOfBirth(): string {
+	public getDateOfBirth(): string {
 		return this.dateOfBirth;
 	}
 
     /**
-     * Setter $id
+     * Setter id
      * @param {number} value
      */
-	public set $id(value: number) {
+	public setId(value: number) {
 		this.id = value;
 	}
 
     /**
-     * Setter $email
+     * Setter email
      * @param {string} value
      */
-	public set $email(value: string) {
+	public setEmail(value: string) {
 		this.email = value;
 	}
 
     /**
-     * Setter $password
+     * Setter password
      * @param {string} value
      */
-	public set $password(value: string) {
+	public setPassword(value: string) {
 		this.password = value;
 	}
 
     /**
-     * Setter $fname
+     * Setter fname
      * @param {string} value
      */
-	public set $fname(value: string) {
+	public setFname(value: string) {
 		this.fname = value;
 	}
 
     /**
-     * Setter $lname
+     * Setter lname
      * @param {string} value
      */
-	public set $lname(value: string) {
+	public setLname(value: string) {
 		this.lname = value;
 	}
 
     /**
-     * Setter $address
+     * Setter address
      * @param {string} value
      */
-	public set $address(value: string) {
+	public setAddress(value: string) {
 		this.address = value;
 	}
 
     /**
-     * Setter $dateOfBirth
+     * Setter dateOfBirth
      * @param {string} value
      */
-	public set $dateOfBirth(value: string) {
+	public setDateOfBirth(value: string) {
 		this.dateOfBirth = value;
 	}
 
