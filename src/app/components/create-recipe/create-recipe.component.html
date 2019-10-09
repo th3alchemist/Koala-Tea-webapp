@@ -1,20 +1,26 @@
 <div id="container" class="col-xs-12 col-sm-9 col-md-9">
     <div class="row">
         <div class="formbox col-md-12">
-            <form  action="" method="POST">
+            <form  #createRecipe="ngForm" (ngSubmit)="submitRecipe()">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                     <h4>Create New Recipe:</h4>
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="unit">Cookbook</label>
+                        <select id="cookbook" name="cookbook" class="cookbook form-control">
+                            <option *ngFor="let c of cookbook" value="{{c}}">{{c}}</option>
+                        </select>
+                    </div>
                     <div class="form-group col-md-12">
                         <label for="title">Recipe Title</label>
                         <input type="text" name="title" class="form-control" id="title" placeholder="Recipe Title">
                     </div>
                     <div class="form-group col-md-6">
                         <label>
-                            <input type="checkbox" value="true" id="public_check" name="public_check"> Public
+                            <input type="checkbox" id="public_check" (click)="check()" value="{{isChecked}}" name="public_check"> Public
                         </label>
                     </div>
                 </div>
@@ -25,19 +31,19 @@
                     </div>
                 </div>
                 <div id="ingredient_block" class="form-row">
-                    <div id="item" class="form-group form-row col-md-12">
+                    <div id="item" name="ingredientlist" class="form-group form-row col-md-12">
                         <div class="form-group col-md-4">
                             <label for="ingredients">Ingredients</label>
-                            <input type="text" class="form-control" name="ingredient" id="ingredients" placeholder="Ingredients">
+                            <input type="text" class="ingredient form-control" name="ingredient" id="ingredients" placeholder="Ingredients">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="amount">Amount</label>
-                            <input type="number" class="form-control" name="amount" id="amount" placeholder="Amount">
+                            <input type="number" class="amount form-control" name="amount" id="amount" placeholder="Amount">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="unit">Unit</label>
-                            <select id="unit" name="unit" class="form-control">
-                                <option *ngFor="let u of units" value="1">{{u}}</option>
+                            <select id="unit" name="unit" class="unit form-control">
+                                <option *ngFor="let u of units" value="{{u.id}}">{{u.unit}}</option>
                             </select>
                         </div>
                     </div>
