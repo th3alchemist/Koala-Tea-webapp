@@ -1,6 +1,14 @@
 @charset "ISO-8859-1";
 /* stylelint-disable selector-no-qualifying-type, property-no-vendor-prefix */
 
+@font-face { font-family: BananaYeti; src: url('../../../assets/BananaYeti-Extrabold.TTF'); } 
+
+h1{
+  font-family: BananaYeti;
+  color: #06C564;
+  font-size: 100px;
+  margin-bottom: 10px;
+}
 html {
   position: relative;
   height: 100%;
@@ -18,15 +26,19 @@ body {
   margin-top: 5%;
   
 }
-
 .form-signin {
-  max-width: 330px;
+  max-width: 600px;
   padding: 15px;
-  margin: 0 auto;
-  /* background-color: rgba(105, 105, 105, 0.356); */
-  background: rgba(209, 200, 200, 0.671);
+  margin: 50px auto;
+  background: #FFBA66;
   border-radius: 10px;
 }
+.body-bg{
+  background-color: #B36300;
+  padding-top: 2%;
+  padding-bottom: 100%;
+}
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;

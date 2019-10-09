@@ -1,7 +1,11 @@
+@font-face { font-family: BananaYeti; src: url('../../../assets/BananaYeti-Extrabold.TTF'); } 
 
-h4 {
-    text-align: center;
-    font-weight: 600;
+h1{
+  font-family: BananaYeti;
+  color: #06C564;
+  font-size: 100px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 label {
     font-weight: 500;
