@@ -47,7 +47,6 @@ export class ViewIngredientComponent implements OnInit {
   m:Meal[] = [];
   i:Ingredient[] = [];
   test(){
-    console.log("user " + this.user.getFname())
     //GET COOKBOOKS
     this.cbs.getCookbooks(this.user).subscribe(
       data => {

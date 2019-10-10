@@ -50,7 +50,7 @@ export class ViewRecipesComponent implements OnInit {
         )
       }
       else{
-        this.router.navigateByUrl('/sender');
+        this.router.navigateByUrl('/viewIngredient');
       }
      }
 
