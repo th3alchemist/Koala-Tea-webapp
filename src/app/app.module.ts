@@ -13,7 +13,6 @@ import { CookbookComponent } from './components/cookbook/cookbook.component';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 import { CreateUserAccountComponent } from './components/create-user-account/create-user-account.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
 import { SearchRecipeComponent } from './components/search-recipe/search-recipe.component';
 import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
@@ -31,12 +30,10 @@ import { ViewRecipesComponent } from './components/view-recipes/view-recipes.com
     CreateRecipeComponent,
     CreateUserAccountComponent,
     DashboardComponent,
-    ViewIngredientComponent,
     EditCookbookComponent,
     SearchRecipeComponent,
     LoggedInNavbarComponent,
     CreateMealPlanComponent,
-    ViewRecipesComponent
   ],
   imports: [
     BrowserModule,
