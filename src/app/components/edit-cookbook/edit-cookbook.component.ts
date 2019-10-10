@@ -3,6 +3,7 @@ import { Cookbook } from 'src/app/classes/cookbook';
 import { CookbookService } from 'src/app/services/cookbook/cookbook.service'
 import { User } from 'src/app/classes/user';
 import { LoginService } from 'src/app/services/loginService/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-cookbook',
@@ -11,12 +12,17 @@ import { LoginService } from 'src/app/services/loginService/login.service';
 })
 export class EditCookbookComponent implements OnInit {
 
-  constructor(private cs:CookbookService, private loginService:LoginService) { }
+  constructor(private cs:CookbookService, private loginService:LoginService, private router:Router) { }
 
-  currentUserId = this.loginService.currentUserId;
+  currentUserId:number;
   cb:Cookbook
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId;
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
   }
 
   getCookbookById(){
