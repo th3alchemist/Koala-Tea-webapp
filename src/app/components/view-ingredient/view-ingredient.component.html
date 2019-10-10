@@ -1,20 +1,16 @@
 <app-logged-in-navbar></app-logged-in-navbar>
 <div class="container-fliud body-bg">
   <form class="form">
-    <h1>Ingredient</h1>
-    <div class="form-element">
-      <input type="text" name="name" class="form-control" placeholder="Name">
+    <h1>Select Cook Book</h1>
+    <div class="form-element col-md-12">
+        <select id="cookbook" name="cookbook" class="cookbook form-control">
+            <option *ngFor="let c of cookbooks" value="{{c.id}}">{{c.title}}</option>
+        </select>
     </div>
-    <div class="form-element">
-      <textarea name="recipe" class="form-control" placeholder="recipe"></textarea>
-    </div>
-    <div class="form-element">
-      <input type="text" name="amount" class="form-control" placeholder="amount">
-    </div>
-    <div class="form-element">
-      <input type="text" name="unit" class="form-control" placeholder="unit">
+    <div class="form-element col-md-12">
+        <button (click)="test()" class="btn btn-lg btn-primary btn-block" type="button">View Cook Book</button>
+        <button (click)="test2()" class="btn btn-lg btn-primary btn-block" type="button">GET MEALPLAN/MEAL</button>
     </div>
   </form>
-  <button (click)="test()" class="btn btn-lg btn-primary btn-block" type="button">GET COOKBOOK/RECIPE/INGREDIENT</button>
-  <button (click)="test2()" class="btn btn-lg btn-primary btn-block" type="button">GET MEALPLAN/MEAL</button>
+  
 </div>

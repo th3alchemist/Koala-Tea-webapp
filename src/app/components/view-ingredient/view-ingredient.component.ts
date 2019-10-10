@@ -12,6 +12,7 @@ import { Meal } from 'src/app/classes/meal';
 import { Ingredient } from 'src/app/classes/ingredient';
 import { Router } from '@angular/router';
 import { TransferService } from 'src/app/services/transferService/transfer.service';
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-view-ingredient',
@@ -23,11 +24,15 @@ export class ViewIngredientComponent implements OnInit {
   constructor(private cbs:CookbookService,private mps:MealplanService, 
     private ms:MealService, private is:IngredientService, 
     private rs:RecipeService, private router:Router,
-    private transferService:TransferService) { }
+    private transferService:TransferService, private cs:CookbookService,
+    private loginService:LoginService) { }
 
   ngOnInit() {
+    this.getAllCookbooks();
   }
 
+  currentUserId = this.loginService.currentUserId;
+  
   id:number;
   name:string;
   amount:number;
@@ -40,49 +45,35 @@ export class ViewIngredientComponent implements OnInit {
   dataMealplan:any;
   dataMeal:any;
 
-  user:User = new User(1, "aa", "bb", "cc", "dd", "ee", "2019-09-09");
-  cb:Cookbook[] = [];
+  user:User = new User(this.currentUserId, "aa", "bb", "cc", "dd", "ee", "2019-09-09");
+
+  cookbooks:Cookbook[] = [];
+  getAllCookbooks(){
+    console.log(this.currentUserId)
+    this.cs.getCookbooks(this.user).subscribe(
+      data => {
+        this.cookbooks = data;
+        console.log(this.cookbooks);
+      },
+      error => {
+        error = "Sorry. Couldn't get those cookbooks!"
+        console.log(error);
+      }
+
+    )
+  }
+
   r:Recipe[] = [];
   mp:Mealplan[] = [];
   m:Meal[] = [];
   i:Ingredient[] = [];
   test(){
-    //GET COOKBOOKS
-    this.cbs.getCookbooks(this.user).subscribe(
-      data => {
-        this.dataCookbook = data;
-        console.log(this.dataCookbook);
-          this.transferService.setData(this.dataCookbook);
-
-          this.router.navigate(['/viewRecipes']);
-        //GET RECIPE BY COOKBOOK
-        // this.rs.getRecipes(this.dataCookbook[0]).subscribe(
-        //   data => {
-        //     this.dataRecipe = data;
-        //     console.log(this.dataRecipe);
-        //     //GET INGREDIENTS BY RECIPE
-        //     this.is.getIngredient(this.dataRecipe[0]).subscribe(
-        //       data => {
-        //         this.dataIngredient = data;
-        //         console.log(this.dataIngredient);
-        //       },
-        //       error => {
-        //         error = "CANNOT GET INGREDIENTS.";
-        //     console.log(error)
-        //       }
-        //     )
-        //   },
-        //   error => {
-        //     error = "CANNOT GET RECIPES.";
-        // console.log(error)
-        //   }
-        // )
-      },
-      error => {
-        error = "CANNOT GET COOKBOOKS.";
-    console.log(error)
-      }
-    )
+    console.log(Number((<HTMLInputElement>document.getElementById('cookbook')).value))
+    let cookbookid = Number((<HTMLInputElement>document.getElementById('cookbook')).value)
+    
+    let cookbook = new Cookbook(cookbookid, "", "", true, this.user);
+    this.transferService.setData(cookbook);
+    this.router.navigate(['/viewRecipes']);
   }
   
 
@@ -93,21 +84,12 @@ export class ViewIngredientComponent implements OnInit {
       data => {
         this.dataMealplan = data;
         console.log(this.dataMealplan);
-        //GET MEAL BY MEALPLAN
-        this.rs.getRecipes(this.dataMealplan[0]).subscribe(
-          data => {
-            this.dataMeal = data;
-            console.log(this.dataMeal);
-          },
-          error => {
-            error = "CANNOT GET MEAL.";
-        console.log(error)
-          }
-        )
+        this.transferService.setData(this.dataMealplan);
+        this.router.navigate(['/viewRecipes']);
       },
       error => {
         error = "CANNOT GET MEALPLANS.";
-    console.log(error)
+        console.log(error)
       }
     )
   }

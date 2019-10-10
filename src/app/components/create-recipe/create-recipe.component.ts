@@ -10,6 +10,7 @@ import { RecipeService } from 'src/app/services/recipeService/recipe.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/loginService/login.service';
 import { IngredientService } from 'src/app/services/ingredientService/ingredient.service';
+import { CookbookService } from 'src/app/service/cookbook.service';
 
 @Component({
   selector: 'app-create-recipe',
@@ -20,16 +21,33 @@ export class CreateRecipeComponent implements OnInit {
 
   constructor(private us:UnitService, private rs:RecipeService,
               private is:IngredientService, private loginService:LoginService,
-              private router:Router) { }
+              private router:Router, private cs:CookbookService) { }
 
   ngOnInit() {
     this.getAllUnits();
+    this.getAllCookbooks()
   }
 
   currentUserId = this.loginService.currentUserId;
+  
   data:any;
-
+  cookbooks:Cookbook[] = [];
   units: Unit[] = [];
+
+  user = new User(this.currentUserId, "", "", "", "", "", "2019-10-10");
+  getAllCookbooks(){
+    this.cs.getCookbooks(this.user).subscribe(
+      data => {
+        this.cookbooks = data;
+        console.log(this.cookbooks);
+      },
+      error => {
+        error = "Sorry. Couldn't get those cookbooks!"
+        console.log(error);
+      }
+
+    )
+  }
 
   getAllUnits(){
     this.us.getAllUnits().subscribe(
@@ -45,10 +63,6 @@ export class CreateRecipeComponent implements OnInit {
     )
   }
 
-  // cooklist : Array<Cookbook> = [];
-  cookbook:Number[] = [1,2];
-  // //CHECKBOX FOR PUBLIC
-  
   isChecked:boolean = false;
 
   check(){
