@@ -12,7 +12,7 @@
                     <div class="form-group col-md-4">
                         <label for="unit">Cookbook</label>
                         <select id="cookbook" name="cookbook" class="cookbook form-control">
-                            <option *ngFor="let c of cookbook" value="{{c}}">{{c}}</option>
+                            <option *ngFor="let c of cookbooks" value="{{c.id}}">{{c.title}}</option>
                         </select>
                     </div>
                     <div class="form-group col-md-12">

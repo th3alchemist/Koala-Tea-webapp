@@ -1,1 +1,18 @@
-<p>view-recipes works!</p>
+<app-logged-in-navbar></app-logged-in-navbar>
+<div class="container-fliud body-bg">
+  <form class="form">
+    <h1>Select Cook Book</h1>
+    <div class="form-element col-md-12">
+        <select id="cookbook" name="cookbook" class="cookbook form-control">
+            <option *ngFor="let c of cookbooks" value="{{c.id}}">{{c.title}}</option>
+        </select>
+    </div>
+    <div class="form-element col-md-12">
+        <button (click)="test()" class="btn btn-lg btn-primary btn-block" type="button">View Cook Book</button>
+        <button (click)="test2()" class="btn btn-lg btn-primary btn-block" type="button">GET MEALPLAN/MEAL</button>
+    </div>
+  </form>
+  <div id="here">
+      
+  </div>
+</div>
