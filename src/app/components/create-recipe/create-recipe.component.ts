@@ -8,6 +8,7 @@ import { Cookbook } from 'src/app/classes/cookbook';
 import { User } from 'src/app/classes/user';
 import { RecipeService } from 'src/app/services/recipeService/recipe.service';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-create-recipe',
@@ -17,12 +18,13 @@ import { Router } from '@angular/router';
 export class CreateRecipeComponent implements OnInit {
 
   constructor(private us:UnitService, private rs:RecipeService,
-              private router:Router) { }
+              private router:Router, private loginService:LoginService) { }
 
   ngOnInit() {
     this.getAllUnits();
   }
 
+  currentUserId = this.loginService.currentUserId;
   data:any;
 
   units: Unit[] = [];
@@ -120,6 +122,7 @@ counter:number = 1;
   
 
   submitRecipe(){
+    console.log("current user id = " + this.currentUserId);
     let cookbookid = Number((<HTMLInputElement>document.getElementById('cookbook')).value)
     let title = (<HTMLInputElement>document.getElementById('title')).value
     let shared = Boolean((<HTMLInputElement>document.getElementById('public_check')).value)

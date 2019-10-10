@@ -15,6 +15,7 @@ import { CreateUserAccountComponent } from './components/create-user-account/cre
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
+import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.
     CreateUserAccountComponent,
     DashboardComponent,
     ViewIngredientComponent,
-    EditCookbookComponent
+    EditCookbookComponent,
+    LoggedInNavbarComponent
   ],
   imports: [
     BrowserModule,
