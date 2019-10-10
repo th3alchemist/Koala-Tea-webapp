@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MealplanService } from 'src/app/services/mealplanService/mealplan.service';
 import { Router } from '@angular/router';
+import { MealService } from 'src/app/services/mealService/meal.service';
 
 @Component({
   selector: 'app-create-meal-plan',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateMealPlanComponent implements OnInit {
 
-  constructor(private mps:MealplanService,private router:Router) { }
+  constructor(private mps:MealplanService, private ms:MealService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -109,7 +110,7 @@ export class CreateMealPlanComponent implements OnInit {
           this.data = data;
           console.log(this.data);
           //AFTER SUBMITTING RECIPE, RECIPE OBJECT IS RETURNED. THEN SUBMIT INGREDIENT WHICH NEEDS THE RECIPE OBJECT
-          this.mps.submitMeal(this.data, this.listOfTitle, this.listOfCourse, this.listOfTime).subscribe(
+          this.ms.submitMeal(this.data, this.listOfTitle, this.listOfCourse, this.listOfTime).subscribe(
             data => {
               this.data = data;
               console.log(this.data);
