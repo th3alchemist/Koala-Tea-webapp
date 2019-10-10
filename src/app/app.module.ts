@@ -16,6 +16,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
 import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
+import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
+import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in
     DashboardComponent,
     ViewIngredientComponent,
     EditCookbookComponent,
-    LoggedInNavbarComponent
+    LoggedInNavbarComponent,
+    CreateMealPlanComponent,
+    ViewRecipesComponent
   ],
   imports: [
     BrowserModule,

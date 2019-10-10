@@ -2,11 +2,11 @@ import { User } from 'src/app/classes/user';
 
 export class Cookbook{
 
-  public id:number;
-  public title:string;
-  public description:string;
-  public shared:boolean;
-  public user:User;
+  id:number;
+  title:string;
+  description:string;
+  shared:boolean;
+  user:User;
 
   constructor(id:number, title:string, description:string, shared:boolean, user:User){
       this.id = id;
@@ -16,7 +16,7 @@ export class Cookbook{
       this.user = user;
   }
 
-  public getId(){return this.id;}
-  public getTitle(){return this.title;}
-  public getDescription(){return this.description;}
+  getId(){return this.id;}
+  getTitle(){return this.title;}
+  getDescription(){return this.description;}
 }
