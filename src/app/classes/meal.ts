@@ -2,11 +2,11 @@ import { Mealplan } from './mealplan';
 
 export class Meal {
     
-    private id:number;
-    private title: string;
-    private course: string;
-    private time:string;
-    private mealPlan:Mealplan;
+    id:number;
+    title: string;
+    course: string;
+    time:string;
+    mealPlan:Mealplan;
 
     constructor(id:number, title:string, course:string, time:string, mealPlan:Mealplan){
         this.id = id;
