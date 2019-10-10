@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Cookbook } from '../classes/cookbook';
-import { User } from '../classes/user';
+import { Cookbook } from '../../classes/cookbook';
+import { User } from '../../classes/user';
 
 @Injectable({
   providedIn: 'root'
