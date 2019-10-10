@@ -4,39 +4,39 @@ export class Unit {
         this.unit = unit;
     }
 
-    private id:number = 0;
-    private unit:string;
+    id:number = 0;
+    unit:string;
 
 
     /**
-     * Getter $id
+     * Getterid
      * @return {number }
      */
-	public get $id(): number  {
+	public getid(): number  {
 		return this.id;
 	}
 
     /**
-     * Getter $unit
+     * Getterunit
      * @return {string}
      */
-	public get $unit(): string {
+	public getunit(): string {
 		return this.unit;
 	}
 
     /**
-     * Setter $id
+     * Setterid
      * @param {number } value
      */
-	public set $id(value: number ) {
+	public setid(value: number ) {
 		this.id = value;
 	}
 
     /**
-     * Setter $unit
+     * Setterunit
      * @param {string} value
      */
-	public set $unit(value: string) {
+	public setunit(value: string) {
 		this.unit = value;
 	}
 
