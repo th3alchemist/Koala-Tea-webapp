@@ -10,7 +10,7 @@ import { RecipeService } from 'src/app/services/recipeService/recipe.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/loginService/login.service';
 import { IngredientService } from 'src/app/services/ingredientService/ingredient.service';
-import { CookbookService } from 'src/app/service/cookbook.service';
+import { CookbookService } from 'src/app/services/cookbook/cookbook.service';
 
 @Component({
   selector: 'app-create-recipe',
