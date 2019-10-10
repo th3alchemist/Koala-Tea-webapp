@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cookbook } from 'src/app/classes/cookbook';
-import { CookbookService } from 'src/app/service/cookbook.service'
+import { CookbookService } from 'src/app/services/cookbook/cookbook.service'
 import { User } from 'src/app/classes/user';
 import { LoginService } from 'src/app/services/loginService/login.service';
 

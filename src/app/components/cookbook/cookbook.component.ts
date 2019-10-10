@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { Cookbook } from 'src/app/classes/cookbook';
-import { CookbookService } from 'src/app/service/cookbook.service'
+import { CookbookService } from 'src/app/services/cookbook/cookbook.service'
 import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
