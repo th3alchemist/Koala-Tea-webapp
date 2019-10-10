@@ -11,6 +11,11 @@ export class IngredientService {
 
   constructor(private http:HttpClient) { }
 
+  getIngredient(recipe:Recipe):Observable<Ingredient[]>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.post<Ingredient[]>("http://localhost:8090/ingredient/byRecipe", JSON.stringify(recipe), {headers: headers});
+  }
+
   submitIngredient(recipe:Recipe, ingredientlist:string[], amountlist:number[], unitlist:number[]):Observable<Ingredient>{
     let list:Array<Ingredient> = [];
     for(var i=0; i<ingredientlist.length; i++){

@@ -16,6 +16,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
 import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
+import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CreateMealPlanComponent } from './components/create-meal-plan/create-me
     DashboardComponent,
     ViewIngredientComponent,
     EditCookbookComponent,
-    CreateMealPlanComponent
+    CreateMealPlanComponent,
+    ViewRecipesComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,11 @@ export class MealService {
 
   constructor(private http:HttpClient) { }
 
+  getMeals(mealplan:Mealplan):Observable<Meal[]>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.post<Meal[]>("http://localhost:8090/meal/byMealPlan", JSON.stringify(mealplan), {headers: headers});
+  }
+
   submitMeal(mealplan:Mealplan, titlelist:string[], courselist:string[], timelist:string[]):Observable<Meal>{
     let list:Array<Meal> = [];
     for(var i=0; i<courselist.length; i++){

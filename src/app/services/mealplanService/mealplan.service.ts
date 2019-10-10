@@ -11,6 +11,11 @@ export class MealplanService {
 
   constructor(private http:HttpClient) { }
 
+  getMealPlans(user:User):Observable<Mealplan[]> {
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.post<Mealplan[]>("http://localhost:8090/mealplan/byUser", JSON.stringify(user), {headers: headers});
+  }
+
   submitMealPlan(userid:number, date:string):Observable<Mealplan> {
     let u = new User(userid, "mail@email.com","password","First Name", "Last Name", "address", "1996-12-17");
     let mp = new Mealplan(4, date, u);
