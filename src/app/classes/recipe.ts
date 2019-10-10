@@ -2,12 +2,12 @@ import { User } from './user';
 import { Cookbook } from './cookbook';
 
 export class Recipe {
-    private id:number = 0;
-    private title:string;
-    private instructions:string;
-    private shared:boolean;
-    private user:User;
-    private cookBook:Cookbook;
+    id:number = 0;
+    title:string;
+    instructions:string;
+    shared:boolean;
+    user:User;
+    cookBook:Cookbook;
     
     constructor(id:number, title:string, instructions:string, 
                 shared:boolean, user:User, cookBook:Cookbook){

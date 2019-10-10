@@ -3,11 +3,11 @@ import { Recipe } from './recipe';
 
 export class Ingredient {
 
-    private id:number = 0;
-    private name:string;
-    private amount:number;
-    private recipe:Recipe;
-    private unit:Unit;
+    id:number = 0;
+    name:string;
+    amount:number;
+    recipe:Recipe;
+    unit:Unit;
 
     constructor(id:number, name:string, amount:number, recipe:Recipe, unit:Unit){
         this.id = id;

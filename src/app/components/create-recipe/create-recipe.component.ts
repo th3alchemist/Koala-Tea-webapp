@@ -99,8 +99,8 @@ counter:number = 1;
     input3.setAttribute("class", "unit form-control");
     for(var i = 0; i < this.units.length; i++){
       let option = document.createElement('option');
-      option.value = this.units[i].$id.toString();
-      option.innerText = this.units[i].$unit;
+      option.value = this.units[i].id.toString();
+      option.innerText = this.units[i].unit;
       input3.appendChild(option);
     }
     div3.appendChild(label3);
