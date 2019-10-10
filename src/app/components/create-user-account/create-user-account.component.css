@@ -1,21 +1,26 @@
+@font-face { font-family: BananaYeti; src: url('../../../assets/BananaYeti-Extrabold.TTF'); } 
+
 html {
     position: relative;
     min-height: 100%;
 }
 body {
+    background-color: #B36300;
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #eee;
     margin-bottom: 60px;
     background-size:cover;
 }
+.body-bg{
+    background-color: #B36300;
+    padding-top: 2%;
+  }
 
 .form-create-user {
+    background-color: #FFBA66;
     max-width: 60%;
     padding: 10px;
     margin: 0 auto;
-    /* background-color: rgba(105, 105, 105, 0.356); */
-    background: rgba(209, 200, 200, 0.671);
     border-radius: 10px;
 }
 
@@ -23,7 +28,12 @@ body {
     padding: 8px;
 }
 
+label {
+    font-family: BananaYeti;
+}
+
 .form-create-user-heading {
+    font-family: BananaYeti;
     text-align: center;
     padding: 10px;
     
@@ -36,10 +46,11 @@ body {
     box-sizing: border-box;
     height: auto;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
 #formbox {
+    color: #06C564;
     display: block;
     margin-top: 5%;
 }

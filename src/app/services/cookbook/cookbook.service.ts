@@ -13,6 +13,11 @@ export class CookbookService {
 
   }
 
+  getCookbooks(user:User):Observable<Cookbook[]> {
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.post<Cookbook[]>("http://localhost:8090/cookbook/byUser", JSON.stringify(user), {headers: headers});
+  }
+
   save(cb:Cookbook){
     let headers = new HttpHeaders().set("Content-Type", "application/json");
 

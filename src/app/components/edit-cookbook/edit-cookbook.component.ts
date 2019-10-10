@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cookbook } from 'src/app/classes/cookbook';
 import { CookbookService } from 'src/app/services/cookbook/cookbook.service'
 import { User } from 'src/app/classes/user';
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-edit-cookbook',
@@ -10,8 +11,9 @@ import { User } from 'src/app/classes/user';
 })
 export class EditCookbookComponent implements OnInit {
 
-  constructor(private cs:CookbookService) { }
+  constructor(private cs:CookbookService, private loginService:LoginService) { }
 
+  currentUserId = this.loginService.currentUserId;
   cb:Cookbook
 
   ngOnInit() {

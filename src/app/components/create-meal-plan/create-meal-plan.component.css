@@ -1,0 +1,30 @@
+@font-face { font-family: BananaYeti; src: url('../../../assets/BananaYeti-Extrabold.TTF'); } 
+
+h1{
+  font-family: BananaYeti;
+  color: #06C564;
+  font-size: 100px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+label {
+    font-weight: 500;
+}
+#container {
+    padding-top:10px;
+    margin-top: 30px;
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formbox {
+    display: block;
+    /* text-align: center; */
+    padding: 5%;
+    margin-top: 50%;
+    margin: 0 auto;
+    /* background-color: rgba(105, 105, 105, 0.356); */
+    background: rgba(255, 67, 8, 0.2);
+    border-radius: 10px;
+}

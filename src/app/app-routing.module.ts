@@ -9,6 +9,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
 import { SearchRecipeComponent } from './components/search-recipe/search-recipe.component';
+import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
+import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 
 const routes: Routes = [
   {
@@ -46,6 +48,18 @@ const routes: Routes = [
   {
     path: "searchRecipe",
     component: SearchRecipeComponent
+  },
+  {
+    path: "createMealPlan",
+    component: CreateMealPlanComponent
+  },
+  {
+    path: "viewIngredient",
+    component: ViewIngredientComponent
+  },
+  {
+    path: "viewRecipes",
+    component: ViewRecipesComponent
   }
 ];
 

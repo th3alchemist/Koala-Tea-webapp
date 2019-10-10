@@ -8,6 +8,8 @@ import { Cookbook } from 'src/app/classes/cookbook';
 import { User } from 'src/app/classes/user';
 import { RecipeService } from 'src/app/services/recipeService/recipe.service';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/loginService/login.service';
+import { IngredientService } from 'src/app/services/ingredientService/ingredient.service';
 
 @Component({
   selector: 'app-create-recipe',
@@ -17,12 +19,14 @@ import { Router } from '@angular/router';
 export class CreateRecipeComponent implements OnInit {
 
   constructor(private us:UnitService, private rs:RecipeService,
+              private is:IngredientService, private loginService:LoginService,
               private router:Router) { }
 
   ngOnInit() {
     this.getAllUnits();
   }
 
+  currentUserId = this.loginService.currentUserId;
   data:any;
 
   units: Unit[] = [];
@@ -99,8 +103,8 @@ counter:number = 1;
     input3.setAttribute("class", "unit form-control");
     for(var i = 0; i < this.units.length; i++){
       let option = document.createElement('option');
-      option.value = this.units[i].$id.toString();
-      option.innerText = this.units[i].$unit;
+      option.value = this.units[i].id.toString();
+      option.innerText = this.units[i].unit;
       input3.appendChild(option);
     }
     div3.appendChild(label3);
@@ -120,6 +124,7 @@ counter:number = 1;
   
 
   submitRecipe(){
+    console.log("current user id = " + this.currentUserId);
     let cookbookid = Number((<HTMLInputElement>document.getElementById('cookbook')).value)
     let title = (<HTMLInputElement>document.getElementById('title')).value
     let shared = Boolean((<HTMLInputElement>document.getElementById('public_check')).value)
@@ -138,7 +143,7 @@ counter:number = 1;
           this.data = data;
           console.log(this.data);
           //AFTER SUBMITTING RECIPE, RECIPE OBJECT IS RETURNED. THEN SUBMIT INGREDIENT WHICH NEEDS THE RECIPE OBJECT
-          this.rs.submitIngredient(this.data, this.listOfIngredientName, this.listOfIngredientAmount, this.listOfIngredientUnit).subscribe(
+          this.is.submitIngredient(this.data, this.listOfIngredientName, this.listOfIngredientAmount, this.listOfIngredientUnit).subscribe(
             data => {
               this.data = data;
               console.log(this.data);
