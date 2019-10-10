@@ -29,9 +29,14 @@ export class ViewRecipesComponent implements OnInit {
    
   ngOnInit() {
     this.getAllCookbooks();
+    this.currentUserId = this.loginService.currentUserId
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
   }
 
-  currentUserId = this.loginService.currentUserId;
+  currentUserId:number;
   
   id:number;
   name:string;

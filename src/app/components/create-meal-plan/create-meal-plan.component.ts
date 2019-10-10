@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MealplanService } from 'src/app/services/mealplanService/mealplan.service';
 import { Router } from '@angular/router';
 import { MealService } from 'src/app/services/mealService/meal.service';
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-create-meal-plan',
@@ -10,12 +11,20 @@ import { MealService } from 'src/app/services/mealService/meal.service';
 })
 export class CreateMealPlanComponent implements OnInit {
 
-  constructor(private mps:MealplanService, private ms:MealService, private router:Router) { }
+  constructor(private mps:MealplanService, private ms:MealService, private router:Router,
+              private loginService:LoginService) { }
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
   }
 
   //GET THE ACTUAL USER ID OKAY
+  currentUserId:number; // this is the actual user id property :)
+
   userid:number = 1;
 
   courses:string[] = ["Breakfast", "Lunch", "Dinner", "Snack", "Dessert"];

@@ -24,12 +24,17 @@ export class CreateRecipeComponent implements OnInit {
               private router:Router, private cs:CookbookService) { }
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
+
     this.getAllUnits();
     this.getAllCookbooks()
   }
 
-  currentUserId = this.loginService.currentUserId;
-  
+  currentUserId:number;
   data:any;
   cookbooks:Cookbook[] = [];
   units: Unit[] = [];
