@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import {ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,7 +12,6 @@ import { CookbookComponent } from './components/cookbook/cookbook.component';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 import { CreateUserAccountComponent } from './components/create-user-account/create-user-account.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
 import { SearchRecipeComponent } from './components/search-recipe/search-recipe.component';
 import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
@@ -31,15 +29,11 @@ import { ViewRecipesComponent } from './components/view-recipes/view-recipes.com
     CreateRecipeComponent,
     CreateUserAccountComponent,
     DashboardComponent,
-    ViewIngredientComponent,
     EditCookbookComponent,
-<<<<<<< HEAD
-    SearchRecipeComponent
-=======
+    SearchRecipeComponent,
     LoggedInNavbarComponent,
     CreateMealPlanComponent,
     ViewRecipesComponent
->>>>>>> d1dc41598ff20afaf53b3ad377899649e580a6ba
   ],
   imports: [
     BrowserModule,
