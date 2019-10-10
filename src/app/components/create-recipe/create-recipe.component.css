@@ -28,3 +28,16 @@ label {
     background: rgba(16, 122, 185, 0.2);
     border-radius: 10px;
 }
+.kt-btn{
+  background-color: #338CC0;
+  margin-right: 20px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #107AB8;
+}
