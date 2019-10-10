@@ -15,6 +15,7 @@ import { CreateUserAccountComponent } from './components/create-user-account/cre
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
+import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
 import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 
@@ -31,6 +32,7 @@ import { ViewRecipesComponent } from './components/view-recipes/view-recipes.com
     DashboardComponent,
     ViewIngredientComponent,
     EditCookbookComponent,
+    LoggedInNavbarComponent,
     CreateMealPlanComponent,
     ViewRecipesComponent
   ],

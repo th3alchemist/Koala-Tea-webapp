@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { Cookbook } from 'src/app/classes/cookbook';
 import { CookbookService } from 'src/app/service/cookbook.service'
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-cookbook',
@@ -12,12 +13,14 @@ import { CookbookService } from 'src/app/service/cookbook.service'
 })
 export class CookbookComponent implements OnInit {
   
-  constructor(private cs:CookbookService) { }
+  constructor(private cs:CookbookService, private loginService:LoginService) { }
 
   data:any
 
   ngOnInit() {
   }
+
+  currentUserId = this.loginService.currentUserId;
 
   onSubmit(){
     let title = <HTMLInputElement>document.getElementById("title")

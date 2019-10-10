@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CreateAccountService} from 'src/app/services/createUserAccountService/create-account.service';
 import { User } from 'src/app/classes/user';
-import {Router} from "@angular/router"
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -113,7 +113,8 @@ export class CreateUserAccountComponent implements OnInit {
                                                             data => {
                                                               returnedUser = data;
 
-                                                              if(returnedUser !== undefined) {                                                                
+                                                              if(returnedUser !== undefined) {    
+                                                                                                                           
                                                                 this.router.navigate(['/login']);
                                                               }
                                                             }
