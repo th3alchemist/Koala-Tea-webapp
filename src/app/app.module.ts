@@ -15,6 +15,7 @@ import { CreateUserAccountComponent } from './components/create-user-account/cre
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewIngredientComponent } from './components/view-ingredient/view-ingredient.component';
 import { EditCookbookComponent } from './components/edit-cookbook/edit-cookbook.component';
+import { SearchRecipeComponent } from './components/search-recipe/search-recipe.component';
 import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
 import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
@@ -32,9 +33,13 @@ import { ViewRecipesComponent } from './components/view-recipes/view-recipes.com
     DashboardComponent,
     ViewIngredientComponent,
     EditCookbookComponent,
+<<<<<<< HEAD
+    SearchRecipeComponent
+=======
     LoggedInNavbarComponent,
     CreateMealPlanComponent,
     ViewRecipesComponent
+>>>>>>> d1dc41598ff20afaf53b3ad377899649e580a6ba
   ],
   imports: [
     BrowserModule,

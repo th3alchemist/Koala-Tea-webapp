@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransferService } from 'src/app/services/transferService/transfer.service';
 import { Router } from '@angular/router';
-import { CookbookService } from 'src/app/service/cookbook.service';
+import { CookbookService } from 'src/app/services/cookbook/cookbook.service';
 import { IngredientService } from 'src/app/services/ingredientService/ingredient.service';
 import { MealplanService } from 'src/app/services/mealplanService/mealplan.service';
 import { RecipeService } from 'src/app/services/recipeService/recipe.service';
