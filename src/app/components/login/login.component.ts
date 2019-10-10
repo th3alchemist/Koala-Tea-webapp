@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/loginService/login.service';
 import { User } from 'src/app/classes/user';
 import {Router} from "@angular/router";
