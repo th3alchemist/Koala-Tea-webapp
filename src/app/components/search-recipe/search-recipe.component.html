@@ -1,0 +1,95 @@
+<div class="container-fliud body-bg">
+  <form class="form">
+    <h1>Search Recipe</h1>
+    <div class="form-element">
+      <input type="text" id="query" class="form-control" placeholder="query">
+    </div>
+    <div class="row">
+      <div class="form-element col-sm-3">
+        Cuisine
+        <select id="cuisine">
+          <option value="">--None--</option>
+          <option value="African">African</option>
+          <option value="American">American</option>
+          <option value="British">British</option>
+          <option value="Cajun">Cajun</option>
+          <option value="Caribbean">Caribbean</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Eastern European">Eastern European</option>
+          <option value="European">European</option>
+          <option value="French">French</option>
+          <option value="German">German</option>
+          <option value="Greek">Greek</option>
+          <option value="Indian">Indian</option>
+          <option value="Irish">Irish</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Jewish">Jewish</option>
+          <option value="Korean">Korean</option>
+          <option value="Latin American">Latin American</option>
+          <option value="Mediterranean">Mediterranean</option>
+          <option value="Mexican">Mexican</option>
+          <option value="Middle Eastern">Middle Eastern</option>
+          <option value="Nordic">Nordic</option>
+          <option value="Southern">Southern</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Thai">Thai</option>
+          <option value="Vietnamese">Vietnamese</option>
+        </select>
+      </div>
+      <div class="form-element col-sm-3">
+        Course
+        <select id="course">
+          <option value="">--None--</option>
+          <option value="main course">main course</option>
+          <option value="side dish">side dish</option>
+          <option value="dessert">dessert</option>
+          <option value="appetizer">appetizer</option>
+          <option value="salad">salad</option>
+          <option value="bread">bread</option>
+          <option value="breakfast">breakfast</option>
+          <option value="soup">soup</option>
+          <option value="beverage">beverage</option>
+          <option value="sauce">sauce</option>
+        </select>
+      </div>
+      <div class="form-element col-sm-3">
+        Diet
+        <select id="diet">
+          <option value="">--None--</option>
+          <option value="Gluten Free">Gluten Free</option>
+          <option value="Ketogenic">Ketogenic</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+          <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Pescetarian">Pescetarian</option>
+          <option value="Paleo">Paleo</option>
+          <option value="Primal">Primal</option>
+          <option value="Whole30">Whole30</option>
+        </select>
+      </div>
+      <div class="form-element col-sm-3">
+        Intolerances
+        <select id="intolerances">
+          <option value="">--None--</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Egg">Egg</option>
+          <option value="Gluten">Gluten</option>
+          <option value="Grain">Grain</option>
+          <option value="Peanut">Peanut</option>
+          <option value="Seafood">Seafood</option>
+          <option value="Sesame">Sesame</option>
+          <option value="Shellfish">Shellfish</option>
+          <option value="Soy">Soy</option>
+          <option value="Sulfite">Sulfite</option>
+          <option value="Tree Nut">Tree Nut</option>
+          <option value="Wheat">Wheat</option>
+        </select>
+      </div>
+    </div>
+    <button class="kt-btn" (click)="onSearch()">Search</button>
+    <hr>
+    <input type="text" id="recipeTitle" class="form-control" placeholder="Title">
+  </form>
+</div>
