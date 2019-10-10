@@ -12,6 +12,7 @@ import { Meal } from 'src/app/classes/meal';
 import { Ingredient } from 'src/app/classes/ingredient';
 import { Router } from '@angular/router';
 import { TransferService } from 'src/app/services/transferService/transfer.service';
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-view-ingredient',
@@ -23,11 +24,14 @@ export class ViewIngredientComponent implements OnInit {
   constructor(private cbs:CookbookService,private mps:MealplanService, 
     private ms:MealService, private is:IngredientService, 
     private rs:RecipeService, private router:Router,
-    private transferService:TransferService) { }
+    private transferService:TransferService, private loginService:LoginService) { }
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId;
+    console.log("current user id = " + this.currentUserId);
   }
 
+  currentUserId:number;
   id:number;
   name:string;
   amount:number;

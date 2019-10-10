@@ -23,10 +23,16 @@ export class CreateRecipeComponent implements OnInit {
               private router:Router) { }
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
+
     this.getAllUnits();
   }
 
-  currentUserId = this.loginService.currentUserId;
+  currentUserId:number;
   data:any;
 
   units: Unit[] = [];

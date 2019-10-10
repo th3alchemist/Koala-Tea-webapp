@@ -6,6 +6,7 @@ import { IngredientService } from 'src/app/services/ingredientService/ingredient
 import { MealplanService } from 'src/app/services/mealplanService/mealplan.service';
 import { RecipeService } from 'src/app/services/recipeService/recipe.service';
 import { MealService } from 'src/app/services/mealService/meal.service';
+import { LoginService } from 'src/app/services/loginService/login.service';
 
 @Component({
   selector: 'app-view-recipes',
@@ -19,10 +20,14 @@ export class ViewRecipesComponent implements OnInit {
   dataIngredient:any;
   dataMealplan:any;
   dataMeal:any;
+  currentUserId:number;
+
   constructor(private transferService:TransferService,
     private router:Router,private cbs:CookbookService,private mps:MealplanService, 
     private ms:MealService, private is:IngredientService, 
-    private rs:RecipeService) {
+    private rs:RecipeService, private loginService:LoginService) {
+
+
       console.log("IN VIEW RECIPES TS");
       if(this.data){
         //GET RECIPE BY COOKBOOK
@@ -50,11 +55,16 @@ export class ViewRecipesComponent implements OnInit {
         )
       }
       else{
-        this.router.navigateByUrl('/viewIngredient');
+        this.router.navigateByUrl('/dashboard');
       }
      }
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId
+    console.log("current user id = " + this.currentUserId);
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
   }
 
   
