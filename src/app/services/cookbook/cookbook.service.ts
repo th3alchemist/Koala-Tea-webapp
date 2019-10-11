@@ -23,7 +23,7 @@ export class CookbookService {
 
     let body = cb;
 
-    return this.http.post("http://localhost:8090/cookbook/save", body, {headers: headers});
+    return this.http.post("http://localhost:8090/cookbook/insert", body, {headers: headers});
   }
 
   getById(id:number){
