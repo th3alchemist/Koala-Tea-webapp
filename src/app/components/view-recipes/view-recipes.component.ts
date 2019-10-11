@@ -31,9 +31,9 @@ export class ViewRecipesComponent implements OnInit {
     this.getAllCookbooks();
     this.currentUserId = this.loginService.currentUserId
 
-    // if(this.currentUserId === undefined || this.currentUserId < 0) {
-    //   this.router.navigate([""]);
-    // }
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
   }
 
   currentUserId:number;
@@ -50,7 +50,7 @@ export class ViewRecipesComponent implements OnInit {
   dataMealplan:any;
   dataMeal:any;
 
-  user:User = new User(1, "aa", "bb", "cc", "dd", "ee", "2019-09-09");
+  user:User = new User(this.currentUserId, "aa", "bb", "cc", "dd", "ee", "2019-09-09");
 
   cookbooks:Cookbook[] = [];
   getAllCookbooks(){

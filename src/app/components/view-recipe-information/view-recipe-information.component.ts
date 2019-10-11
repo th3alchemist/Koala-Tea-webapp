@@ -34,8 +34,12 @@ data = this.transferService.getData();
       data => {
         this.recipe = data;
         //POPULATE RECIPE INFORMATION
-        let recipeOfficial = <HTMLElement>document.getElementById('cookbook')
-        recipeOfficial.innerText = "asds"
+        let recipeOfficial = <HTMLInputElement>document.getElementById('cookbook')
+        recipeOfficial.value = this.recipe.cookBook.title
+        let recipeTitle = <HTMLInputElement>document.getElementById('title')
+        recipeTitle.value = this.recipe.title
+        let recipeInstructions = <HTMLInputElement>document.getElementById('instructions')
+        recipeInstructions.value = this.recipe.instructions
         //GET LIST OF INGREDIENTS
         this.is.getIngredient(this.recipe).subscribe(
           data => {
