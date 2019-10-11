@@ -5,6 +5,10 @@ h1{
   color: #06C564;
   font-size: 100px;
   margin-bottom: 10px;
+  text-align: center;
+}
+label {
+    font-weight: 500;
 }
 .form {
   max-width: 600px;
@@ -13,12 +17,12 @@ h1{
   background: #FFBA66;
   border-radius: 10px;
 }
-label {
+/* label {
   font-family: BananaYeti;
   font-size: 35px;
   margin-bottom: 10px;
   color: #06C564;
-}
+} */
 .form-control {
   position: relative;
   -webkit-box-sizing: border-box;
