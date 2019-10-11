@@ -19,6 +19,12 @@ export class RecipeService {
     return this.http.post<Recipe[]>("http://localhost:8090/recipe/byCookbook", JSON.stringify(cookbook), {headers: headers});
   }
 
+  getRecipeById(id:number):Observable<Recipe>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json")
+    let url = "http://localhost:8090/recipe/" + id
+
+    return this.http.get<Recipe>(url, {headers: headers})
+  }
   submitRecipe(cookbookid:number, title:string, shared:boolean, instructions:string):Observable<Recipe> {
     let u = new User(1, "mail@email.com","password","First Name", "Last Name", "address", "1996-12-17");
     let c = new Cookbook(1, "My Cookbook", "Description", true, u);

@@ -17,6 +17,7 @@ import { SearchRecipeComponent } from './components/search-recipe/search-recipe.
 import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in-navbar.component';
 import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
+import { ViewRecipeInformationComponent } from './components/view-recipe-information/view-recipe-information.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ViewRecipesComponent } from './components/view-recipes/view-recipes.com
     SearchRecipeComponent,
     LoggedInNavbarComponent,
     CreateMealPlanComponent,
-    ViewRecipesComponent
+    ViewRecipesComponent,
+    ViewRecipeInformationComponent
   ],
   imports: [
     BrowserModule,

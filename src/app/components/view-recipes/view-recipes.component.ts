@@ -31,9 +31,9 @@ export class ViewRecipesComponent implements OnInit {
     this.getAllCookbooks();
     this.currentUserId = this.loginService.currentUserId
 
-    if(this.currentUserId === undefined || this.currentUserId < 0) {
-      this.router.navigate([""]);
-    }
+    // if(this.currentUserId === undefined || this.currentUserId < 0) {
+    //   this.router.navigate([""]);
+    // }
   }
 
   currentUserId:number;
@@ -84,7 +84,7 @@ export class ViewRecipesComponent implements OnInit {
       data => {
         this.dataRecipe = data;
         console.log(this.dataRecipe);
-        this.displayRecipes();
+        this.displayRecipes(this.dataRecipe);
         // //GET INGREDIENTS BY RECIPE
         // this.is.getIngredient(this.dataRecipe[0]).subscribe(
         //   data => {
@@ -103,27 +103,47 @@ export class ViewRecipesComponent implements OnInit {
       }
     )
   }
-  counter:number=0;
-  displayRecipes(){
+
+  displayRecipes(rdata:any){
     let container = <HTMLElement>document.getElementById('here');
-    console.log("counter " + this.counter++)
     console.log("current count " + document.getElementById('here').children.length)
     if(document.getElementById('here').children.length > 0){
       container.removeChild(document.getElementById('child'))
-      let div = document.createElement('div');
-      div.setAttribute("id", "child")
-      div.innerHTML = "this.dataRecipe2";
-      container.appendChild(div);
     }else{
       
-      let div = document.createElement('div');
-      div.setAttribute("id", "child")
-      div.innerHTML = "this.dataRecipe";
-      container.appendChild(div);
     }
-    
+    let div = document.createElement('div');
+    div.setAttribute("id", "child")
+    let table = document.createElement('table');
+    table.setAttribute("class", "table");
+    for(var i=0; i<rdata.length; i++){
+      let tr = document.createElement('tr');
+      let td1 = document.createElement('td');
+      td1.innerHTML = rdata[i].title;
+      let td2 = document.createElement('td');
+      let btn = document.createElement('button');
+      btn.setAttribute("type", "button");
+      btn.setAttribute("value", rdata[i].id);
+      btn.addEventListener("click", this.viewRecipeInfo.bind(this));
+      btn.innerHTML = "view";
+      td2.appendChild(btn)
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      table.appendChild(tr)
+    }
+    div.appendChild(table)
+    container.appendChild(div);
+
   }
 
+  viewRecipeInfo(event:any){
+    console.log(event.target.value)
+    let book = new Cookbook(0, "", "", true, this.user);
+    let recipe = new Recipe(event.target.value, "", "", true, this.user, book);
+    console.log("asdasds")
+    this.transferService.setData(recipe);
+    this.router.navigate(['/viewRecipeInformation']);
+  }
   test2(){
 
     //GET MEALPLANS BY USER

@@ -1,18 +1,23 @@
 <app-logged-in-navbar></app-logged-in-navbar>
-<div class="container-fliud body-bg">
-  <form class="form">
-    <h1>Select Cook Book</h1>
-    <div class="form-element col-md-12">
-        <select id="cookbook" name="cookbook" class="cookbook form-control">
-            <option *ngFor="let c of cookbooks" value="{{c.id}}">{{c.title}}</option>
-        </select>
+<div class="container-fliud body-bg col-md-12">
+  <div class="row">
+    <div class="col-md-6">
+        <form class="form">
+            <h3>Select Cook Book</h3>
+            <div class="form-element col-md-12">
+                <select id="cookbook" name="cookbook" class="cookbook form-control">
+                    <option *ngFor="let c of cookbooks" value="{{c.id}}">{{c.title}}</option>
+                </select>
+            </div>
+            <div class="form-element col-md-12">
+                <button (click)="test()" class="btn btn-lg btn-primary btn-block" type="button">View Cook Book</button>
+                <button (click)="test2()" class="btn btn-lg btn-primary btn-block" type="button">GET MEALPLAN/MEAL</button>
+            </div>
+        </form>
     </div>
-    <div class="form-element col-md-12">
-        <button (click)="test()" class="btn btn-lg btn-primary btn-block" type="button">View Cook Book</button>
-        <button (click)="test2()" class="btn btn-lg btn-primary btn-block" type="button">GET MEALPLAN/MEAL</button>
+    <div class="col-md-6" id="here">
+        
     </div>
-  </form>
-  <div id="here">
-      
+
   </div>
 </div>
