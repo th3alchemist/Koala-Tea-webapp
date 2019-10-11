@@ -19,6 +19,7 @@ import { CreateMealPlanComponent } from './components/create-meal-plan/create-me
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 import { ViewRecipeInformationComponent } from './components/view-recipe-information/view-recipe-information.component';
 import { ViewMealPlanComponent } from './components/view-meal-plan/view-meal-plan.component';
+import { ViewNutritionalInfoComponent } from './components/view-nutritional-info/view-nutritional-info.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ViewMealPlanComponent } from './components/view-meal-plan/view-meal-pla
     CreateMealPlanComponent,
     ViewRecipesComponent,
     ViewRecipeInformationComponent,
-    ViewMealPlanComponent
+    ViewMealPlanComponent,
+    ViewNutritionalInfoComponent
   ],
   imports: [
     BrowserModule,

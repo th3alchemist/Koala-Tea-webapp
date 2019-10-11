@@ -34,4 +34,13 @@ export class SpoonService {
     let url = "http://localhost:8090/spoon/recipe/" + id
     return this.http.get(url, {headers: headers});
   }
+
+  searchNutrition(query:string) {
+    console.log("made it in the search")
+    let sendString = query.split(' ').join('+');
+    let body = new HttpParams().set("query", sendString);
+    let headers = new HttpHeaders().set("Content-Type", "application/json")
+    let url = "http://localhost:8090/spoon/nutritionInfo";
+    return this.http.post(url, body, {headers: headers});
+  }
 }

@@ -15,16 +15,22 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4" align="center">
+    <div class="col" align="center">
       <div class="card">
         <h2> Meal-Plan </h2>
-        <img src="../../../assets/meal.jpg">
+        <img class="card-img" src="../../../assets/meal.jpg" alt="Card image">
+        <div class="card-body">
+          <a routerLink="/viewMealPlan" class="btn btn-primary">Search Recipe</a>
+        </div>
       </div>
     </div>
-    <div class="col-sm-4" align="center" routerLink="/editCookbook">
+    <div class="col" align="center">
       <div class="card">
-        <h2> Cookbook </h2>
-        <img src="../../../assets/cookbook.png">
+        <h2> Nutrition Info. </h2>
+        <img class="card-img" src="../../../assets/healthy.jpg" alt="Card image">
+        <div class="card-body">
+          <a routerLink="/nutritionInfo" class="btn btn-primary">Search Nutrition Info.</a>
+        </div>
       </div>
     </div>
   </div>

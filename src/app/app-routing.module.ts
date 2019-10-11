@@ -12,6 +12,7 @@ import { CreateMealPlanComponent } from './components/create-meal-plan/create-me
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 import { ViewRecipeInformationComponent } from './components/view-recipe-information/view-recipe-information.component';
 import { ViewMealPlanComponent } from './components/view-meal-plan/view-meal-plan.component';
+import { ViewNutritionalInfoComponent } from './components/view-nutritional-info/view-nutritional-info.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "viewMealPlan",
     component: ViewMealPlanComponent
+  },
+  {
+    path: "nutritionInfo",
+    component: ViewNutritionalInfoComponent,
   },
   {
     path: "login",

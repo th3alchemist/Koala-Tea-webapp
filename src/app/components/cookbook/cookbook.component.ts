@@ -31,9 +31,7 @@ export class CookbookComponent implements OnInit {
   onSubmit(){
     let title = <HTMLInputElement>document.getElementById("title")
     let description = <HTMLInputElement>document.getElementById("description")
-    let recipe = <HTMLInputElement>document.getElementById("recipe")
-
-    console.log(title)
+    // let recipe = <HTMLInputElement>document.getElementById("recipe")
 
     var u = new User(this.currentUserId, "", "", "", "", "", "");
     var cb = new Cookbook(0, title.value, description.value, true, u)

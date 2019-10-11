@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
             } else {
               this.errorNum++;
               this.errors.push("Incorrect Username and Password");
-              // show errors on login page
             }
           }
         }
