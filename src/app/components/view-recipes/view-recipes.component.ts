@@ -28,12 +28,14 @@ export class ViewRecipesComponent implements OnInit {
           private loginService:LoginService) { }
    
   ngOnInit() {
-    this.getAllCookbooks();
     this.currentUserId = this.loginService.currentUserId
 
     if(this.currentUserId === undefined || this.currentUserId < 0) {
       this.router.navigate([""]);
     }
+
+    this.getAllCookbooks();
+    
   }
 
   currentUserId:number;
@@ -50,11 +52,11 @@ export class ViewRecipesComponent implements OnInit {
   dataMealplan:any;
   dataMeal:any;
 
-  user:User = new User(this.currentUserId, "aa", "bb", "cc", "dd", "ee", "2019-09-09");
+  user:User;
 
   cookbooks:Cookbook[] = [];
   getAllCookbooks(){
-    console.log(this.currentUserId)
+    this.user = new User(this.currentUserId, "", "", "", "", "", "");
     this.cs.getCookbooks(this.user).subscribe(
       data => {
         this.cookbooks = data;
