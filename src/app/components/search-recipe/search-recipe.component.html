@@ -1,3 +1,4 @@
+<app-logged-in-navbar></app-logged-in-navbar>
 <div class="container-fliud body-bg">
   <form class="form">
     <h1>Search Recipe</h1>
@@ -90,6 +91,11 @@
     </div>
     <button class="kt-btn" (click)="onSearch()">Search</button>
     <hr>
-    <input type="text" id="recipeTitle" class="form-control" placeholder="Title">
+    <div class="form-element">
+      <input type="text" id="recipeTitle" class="form-control" placeholder="Title">
+    </div>
+    <div class="form-element">
+      <textarea id="recipeInstructions" placeholder="Instructions"></textarea>
+    </div>
   </form>
 </div>

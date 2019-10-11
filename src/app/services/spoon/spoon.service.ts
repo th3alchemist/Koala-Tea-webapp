@@ -21,12 +21,17 @@ export class SpoonService {
                                 .set("diet", diet)
                                 .set("intolerances", intolerances)
                                 .set("number", "1")
+                                .set("instructionsRequired", "True")
 
     let headers = new HttpHeaders().set("Content-Type", "application/json")
     let url = "http://localhost:8090/spoon/recipe"
 
     return this.http.post(url, body, {headers: headers});
   }
-}
 
-//"https://api.spoonacular.com/recipes/search?limit=1&apiKey=289b04699cb04232ba94fb1380791a59&course=appetizer&cuisine=British&diet=Gluten%20Free&intolerances=Egg&number=1"
+  recipeDetails(id:string){
+    let headers = new HttpHeaders().set("Content-Type", "application/json")
+    let url = "http://localhost:8090/spoon/recipe/" + id
+    return this.http.get(url, {headers: headers});
+  }
+}
