@@ -114,7 +114,7 @@ export class CreateMealPlanComponent implements OnInit {
     }
 
     //THIS SUBMITS RECIPE OBJECT ONLY
-    this.mps.submitMealPlan(this.userid, date).subscribe(
+    this.mps.submitMealPlan(this.currentUserId, date).subscribe(
       data => {
           this.data = data;
           console.log(this.data);

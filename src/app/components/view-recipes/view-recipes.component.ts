@@ -78,25 +78,12 @@ export class ViewRecipesComponent implements OnInit {
     let cookbookid = Number((<HTMLInputElement>document.getElementById('cookbook')).value)
     
     let cookbook = new Cookbook(cookbookid, "", "", true, this.user);
-    // this.transferService.setData(cookbook);
-    // this.router.navigate(['/viewRecipes']);
 
     this.rs.getRecipes(cookbook).subscribe(
       data => {
         this.dataRecipe = data;
         console.log(this.dataRecipe);
         this.displayRecipes(this.dataRecipe);
-        // //GET INGREDIENTS BY RECIPE
-        // this.is.getIngredient(this.dataRecipe[0]).subscribe(
-        //   data => {
-        //     this.dataIngredient = data;
-        //     console.log(this.dataIngredient);
-        //   },
-        //   error => {
-        //     error = "CANNOT GET INGREDIENTS.";
-        // console.log(error)
-        //   }
-        // )
       },
       error => {
         error = "CANNOT GET RECIPES.";
@@ -145,21 +132,6 @@ export class ViewRecipesComponent implements OnInit {
     this.transferService.setData(recipe);
     this.router.navigate(['/viewRecipeInformation']);
   }
-  test2(){
-
-    //GET MEALPLANS BY USER
-    this.mps.getMealPlans(this.user).subscribe(
-      data => {
-        this.dataMealplan = data;
-        console.log(this.dataMealplan);
-        this.transferService.setData(this.dataMealplan);
-        this.router.navigate(['/viewRecipes']);
-      },
-      error => {
-        error = "CANNOT GET MEALPLANS.";
-        console.log(error)
-      }
-    )
-  }
+ 
   
 }
