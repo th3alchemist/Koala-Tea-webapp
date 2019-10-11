@@ -13,11 +13,9 @@ h1{
   background: #FFBA66;
   border-radius: 10px;
 }
-label {
-  font-family: BananaYeti;
-  font-size: 35px;
-  margin-bottom: 10px;
-  color: #06C564;
+textarea {
+  width: 100%;
+  height: 300px;
 }
 .form-control {
   position: relative;

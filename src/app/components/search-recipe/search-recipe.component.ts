@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cookbook } from 'src/app/classes/cookbook';
+import { Recipe } from 'src/app/classes/recipe';
 import { SpoonService } from 'src/app/services/spoon/spoon.service'
 
 @Component({
@@ -15,11 +16,12 @@ export class SearchRecipeComponent implements OnInit {
   }
 
   data:any
+  id:number
 
   onSearch(){
     var query_ele = document.getElementById("query");
     var query = (<HTMLInputElement> query_ele).value
-//HTMLSelectElement
+
     var cuisine_ele = <HTMLSelectElement>document.getElementById("cuisine");
     var cuisine = cuisine_ele.options[cuisine_ele.selectedIndex].value
 
@@ -35,7 +37,7 @@ export class SearchRecipeComponent implements OnInit {
     this.ss.searchRecipe(query, course, cuisine, diet, intolerance).subscribe(
       data => {
         this.data = data
-        console.log(this.data.title);
+        this.id = this.data.id
 
         var title_ele = <HTMLInputElement>document.getElementById('recipeTitle')
 

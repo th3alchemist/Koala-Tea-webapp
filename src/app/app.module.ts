@@ -33,6 +33,7 @@ import { ViewRecipesComponent } from './components/view-recipes/view-recipes.com
     SearchRecipeComponent,
     LoggedInNavbarComponent,
     CreateMealPlanComponent,
+    ViewRecipesComponent
   ],
   imports: [
     BrowserModule,
