@@ -19,13 +19,12 @@ label {
     margin-right: auto;
 }
 .formbox {
+    background: #FFBA66;
     display: block;
     /* text-align: center; */
     padding: 5%;
     margin-top: 50%;
     margin: 0 auto;
-    /* background-color: rgba(105, 105, 105, 0.356); */
-    /* background: rgba(255, 67, 8, 0.2); */
     background: #FFBA66;
     border-radius: 10px;
 }

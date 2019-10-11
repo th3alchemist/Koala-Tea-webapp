@@ -19,6 +19,7 @@ label {
     margin-right: auto;
 }
 .formbox {
+  background: #FFBA66;
     display: block;
     /* text-align: center; */
     padding: 5%;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/loginService/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logged-in-navbar',
@@ -8,15 +9,18 @@ import { LoginService } from 'src/app/services/loginService/login.service';
 })
 export class LoggedInNavbarComponent implements OnInit {
 
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService, private router:Router) { }
 
   ngOnInit() {
+    this.user = this.loginService.currentUserName;
   }
 
   logout() {
-    console.log("logout button works")
+    this.loginService.currentUserId=undefined;
+    this.router.navigate(['/'])
+
   }
 
-  user:string = this.loginService.currentUserName;
+  user:string;
 
 }

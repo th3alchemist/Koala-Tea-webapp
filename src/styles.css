@@ -4,3 +4,7 @@
 body {
     background-color: #B36300;
 }
+
+.navbar a {
+    font-size: 27px;
+}

@@ -1,0 +1,17 @@
+<app-logged-in-navbar></app-logged-in-navbar>
+<div class="container-fliud body-bg">
+    <form #searchForm="ngForm" (ngSubmit)="onSearch()" class="form">
+      <h1>Search Nutrition Information</h1>
+      <div class="form-element">
+        <label for="query">Example Search: "How much vitamin c is in 2 apples?"</label>
+        <input type="text" [(ngModel)]="query" name="query" class="form-control" placeholder="query">
+      </div>
+      <div class="row">
+      </div>
+      <button class="kt-btn" type="submit">Search</button>
+    </form>
+    <div class="form" [hidden]="isItHidden">
+        <textarea readonly id="nutritionInfo" placeholder="Nutrition Information"></textarea>
+    </div>
+  </div>
+  

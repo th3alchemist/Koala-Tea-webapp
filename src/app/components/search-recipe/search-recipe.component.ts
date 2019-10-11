@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Cookbook } from 'src/app/classes/cookbook';
 import { Recipe } from 'src/app/classes/recipe';
 import { SpoonService } from 'src/app/services/spoon/spoon.service'
+import { LoginService } from 'src/app/services/loginService/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-recipe',
@@ -10,11 +12,17 @@ import { SpoonService } from 'src/app/services/spoon/spoon.service'
 })
 export class SearchRecipeComponent implements OnInit {
 
-  constructor(private ss:SpoonService) { }
+  constructor(private ss:SpoonService, private loginService:LoginService, private router:Router) { }
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    } 
   }
 
+  currentUserId:number;
   data:any
   id:number
 

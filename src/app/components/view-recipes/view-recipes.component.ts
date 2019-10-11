@@ -32,9 +32,10 @@ export class ViewRecipesComponent implements OnInit {
 
     if(this.currentUserId === undefined || this.currentUserId < 0) {
       this.router.navigate([""]);
+    } 
+    else {
+      this.getAllCookbooks();
     }
-
-    this.getAllCookbooks();
   }
 
   currentUserId:number;
