@@ -11,11 +11,16 @@ import { SearchRecipeComponent } from './components/search-recipe/search-recipe.
 import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 import { ViewRecipeInformationComponent } from './components/view-recipe-information/view-recipe-information.component';
+import { ViewMealPlanComponent } from './components/view-meal-plan/view-meal-plan.component';
 
 const routes: Routes = [
   {
     path: "",
     component: LandingComponent
+  },
+  {
+    path: "viewMealPlan",
+    component: ViewMealPlanComponent
   },
   {
     path: "login",
