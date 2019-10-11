@@ -22,9 +22,9 @@ export class ViewMealPlanComponent implements OnInit {
   ngOnInit() {
     this.currentUserId = this.loginService.currentUserId;
 
-    // if(this.currentUserId === undefined || this.currentUserId < 0) {
-    //   this.router.navigate([""]);
-    // }
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
 
     this.getMealPlans();
 
@@ -35,8 +35,7 @@ export class ViewMealPlanComponent implements OnInit {
   meals:Meal[] = []
 
   getMealPlans(){
-    this.user = new User(1, "", "", "", "", "", "");
-    // this.user = new User(this.currentUserId, "", "", "", "", "", "");
+    this.user = new User(this.currentUserId, "", "", "", "", "", "");
     this.mps.getMealPlans(this.user).subscribe(
       data => {
         this.mealplans = data;
@@ -87,7 +86,6 @@ export class ViewMealPlanComponent implements OnInit {
         data => {
           this.meals = data;
           for(var k=0; k<this.meals.length;k++){
-            console.log("meal inside 2nd for = " + this.meals)
             let td = document.createElement('td')
             td.innerText = this.meals[k].title + " " + this.meals[k].course +  " " + this.meals[k].time
             tr.appendChild(td)
