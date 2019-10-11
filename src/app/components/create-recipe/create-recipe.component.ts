@@ -38,9 +38,10 @@ export class CreateRecipeComponent implements OnInit {
   data:any;
   cookbooks:Cookbook[] = [];
   units: Unit[] = [];
+  user:User;
 
-  user = new User(this.currentUserId, "", "", "", "", "", "2019-10-10");
   getAllCookbooks(){
+    this.user = new User(this.currentUserId, "", "", "", "", "", "");
     this.cs.getCookbooks(this.user).subscribe(
       data => {
         this.cookbooks = data;
@@ -143,7 +144,7 @@ counter:number = 1;
   
 
   submitRecipe(){
-    console.log("current user id = " + this.currentUserId);
+    this.data = null;
     let cookbookid = Number((<HTMLInputElement>document.getElementById('cookbook')).value)
     let title = (<HTMLInputElement>document.getElementById('title')).value
     let shared = Boolean((<HTMLInputElement>document.getElementById('public_check')).value)
@@ -155,19 +156,18 @@ counter:number = 1;
       this.listOfIngredientAmount.push(Number((<HTMLInputElement>ingredients.getElementsByClassName("amount")[i]).value));
       this.listOfIngredientUnit.push(Number((<HTMLInputElement>ingredients.getElementsByClassName("unit")[i]).value))
     }
-   console.log("checkbox " + shared)
     //THIS SUBMITS RECIPE OBJECT ONLY
-    this.rs.submitRecipe(cookbookid, title, shared, instruction).subscribe(
+    this.rs.submitRecipe(cookbookid, title, shared, instruction, this.currentUserId).subscribe(
       data => {
           this.data = data;
-          console.log(this.data);
+          if(this.data !== null){
           //AFTER SUBMITTING RECIPE, RECIPE OBJECT IS RETURNED. THEN SUBMIT INGREDIENT WHICH NEEDS THE RECIPE OBJECT
           this.is.submitIngredient(this.data, this.listOfIngredientName, this.listOfIngredientAmount, this.listOfIngredientUnit).subscribe(
             data => {
               this.data = data;
               console.log(this.data);
               if(this.data !== null){
-                this.router.navigate(['/cookbook']);
+                this.router.navigate(['/dashboard']);
               }
             },
             error => {
@@ -175,7 +175,8 @@ counter:number = 1;
           console.log(error)
             }
           )
-      },
+      }
+    },
       error => {
         error = "RECIPE INSERT FAIL.";
         console.log(error)

@@ -5,6 +5,7 @@ import { User } from 'src/app/classes/user';
 import { Cookbook } from 'src/app/classes/cookbook';
 import { CookbookService } from 'src/app/services/cookbook/cookbook.service'
 import { LoginService } from 'src/app/services/loginService/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cookbook',
@@ -13,14 +14,19 @@ import { LoginService } from 'src/app/services/loginService/login.service';
 })
 export class CookbookComponent implements OnInit {
   
-  constructor(private cs:CookbookService, private loginService:LoginService) { }
+  constructor(private cs:CookbookService, private loginService:LoginService, private router:Router) { }
 
   data:any
 
   ngOnInit() {
+    this.currentUserId = this.loginService.currentUserId
+
+    if(this.currentUserId === undefined || this.currentUserId < 0) {
+      this.router.navigate([""]);
+    }
   }
 
-  currentUserId = this.loginService.currentUserId;
+  currentUserId:number;
 
   onSubmit(){
     let title = <HTMLInputElement>document.getElementById("title")
@@ -29,14 +35,14 @@ export class CookbookComponent implements OnInit {
 
     console.log(title)
 
-    var u = new User(1, "email", "pwd", "fname", "lname", "address", "1996-12-17")
-    var cb = new Cookbook(-1, title.value, description.value, true, u)
+    var u = new User(this.currentUserId, "", "", "", "", "", "");
+    var cb = new Cookbook(0, title.value, description.value, true, u)
     
     console.log(JSON.stringify(cb))
     this.cs.save(cb).subscribe(
       data => {
         this.data = data;
-        console.log(this.data);
+        this.router.navigate(["/dashboard"]);
       })
   }
 }
