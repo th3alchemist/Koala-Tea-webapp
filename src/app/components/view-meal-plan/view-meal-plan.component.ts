@@ -35,6 +35,7 @@ export class ViewMealPlanComponent implements OnInit {
   meals:Meal[] = []
 
   getMealPlans(){
+    
     this.user = new User(this.currentUserId, "", "", "", "", "", "");
     this.mps.getMealPlans(this.user).subscribe(
       data => {
@@ -65,12 +66,16 @@ export class ViewMealPlanComponent implements OnInit {
   
 
   validMealplans(mealplans){
+    console.log(mealplans)
     let validPlans:Mealplan[] = [];
     for(var i=0; i<mealplans.length; i++){
-      let mealplandate = new Date(mealplans[i].day)
+      console.log("here")
+      let mealplandate = new Date(this.mealplans[i].day)
       if(mealplandate >= this.d1 && mealplandate <= this.d7) {
-        console.log(mealplans[i].day)
-        validPlans.push(mealplans[i])
+        console.log(this.mealplans[i].day)
+        validPlans.push(this.mealplans[i])
+      }else{
+        
       }
     }
     console.log(validPlans.length)
@@ -78,16 +83,18 @@ export class ViewMealPlanComponent implements OnInit {
     let thead = document.querySelector('thead')
     let tbody = document.querySelector('tbody')
     let tr = document.createElement('tr')
-    for(var j=0; j<validPlans.length; j++){
+    for(var j=0; j < validPlans.length; j++){
+      console.log("here" + j)
       let th = document.createElement('th')
       th.innerText = validPlans[j].day
       thead.appendChild(th)
       this.ms.getMeals(validPlans[j]).subscribe(
         data => {
           this.meals = data;
-          for(var k=0; k<this.meals.length;k++){
-            let td = document.createElement('td')
-            td.innerText = this.meals[k].title + " " + this.meals[k].course +  " " + this.meals[k].time
+          let td = document.createElement('td')
+          for(var k=0; k < this.meals.length; k++){
+            var a = "[ " + this.meals[k].title + " " + this.meals[k].course +  " " + this.meals[k].time + " ]";
+            td.innerText += a
             tr.appendChild(td)
           } 
           tbody.appendChild(tr) 
