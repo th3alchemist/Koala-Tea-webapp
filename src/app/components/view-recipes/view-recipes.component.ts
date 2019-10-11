@@ -35,7 +35,6 @@ export class ViewRecipesComponent implements OnInit {
     }
 
     this.getAllCookbooks();
-    
   }
 
   currentUserId:number;

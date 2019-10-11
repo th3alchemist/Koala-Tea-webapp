@@ -18,6 +18,7 @@ import { LoggedInNavbarComponent } from './components/logged-in-navbar/logged-in
 import { CreateMealPlanComponent } from './components/create-meal-plan/create-meal-plan.component';
 import { ViewRecipesComponent } from './components/view-recipes/view-recipes.component';
 import { ViewRecipeInformationComponent } from './components/view-recipe-information/view-recipe-information.component';
+import { ViewMealPlanComponent } from './components/view-meal-plan/view-meal-plan.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ViewRecipeInformationComponent } from './components/view-recipe-informa
     LoggedInNavbarComponent,
     CreateMealPlanComponent,
     ViewRecipesComponent,
-    ViewRecipeInformationComponent
+    ViewRecipeInformationComponent,
+    ViewMealPlanComponent
   ],
   imports: [
     BrowserModule,
