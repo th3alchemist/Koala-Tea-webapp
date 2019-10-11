@@ -66,6 +66,10 @@ const routes: Routes = [
   {
     path: "viewRecipeInformation",
     component: ViewRecipeInformationComponent
+  },
+  {
+    path: "viewMealPlans",
+    component: ViewMealPlanComponent
   }
 ];
 
